@@ -3,8 +3,13 @@ import './App.css';
 import { AppBar, Container, Grid, Toolbar, Paper, Typography, Button, IconButton, MenuIcon } from '@mui/material'
 import { useTheme } from '@mui/material/styles';
 import StyledPaper from "./components/StyledPaper";
+import StyledTable from "./components/StyledTable";
 
 function App() {
+  function isDataSent(){
+    return true;
+  }
+
   const theme = useTheme();
   return (
     <div className="App">
@@ -28,6 +33,8 @@ function App() {
           </Grid>
         </Grid>
       </Grid>
+
+      {isDataSent() ? <StyledTable />: <h2>Naris</h2>}
      
     </div>
   );

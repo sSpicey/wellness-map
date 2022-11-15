@@ -14,15 +14,15 @@ function StyledPaper(props) {
             <ListItem divider sx={{height:220}}></ListItem>
             <ListItem divider sx={{backgroundColor:'#7ccfde', bottom:'0px', height:40}}>
             <Slider
-  aria-label="Temperature"
-  defaultValue={5}
-  valueLabelDisplay="auto"
-  step={1}
-  marks
-  min={1}
-  color='secondary'
-  max={10}
-/>
+                aria-label="Temperature"
+                defaultValue={5}
+                valueLabelDisplay="auto"
+                step={1}
+                marks
+                min={1}
+                color='secondary'
+                max={10}
+            />
             </ListItem>
         </Paper> 
     );
