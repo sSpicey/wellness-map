@@ -12,7 +12,7 @@ function StyledPaper(props) {
             width: 250}}>
             <ListItem divider align-items='center' sx={{backgroundColor:'#7ccfde', height:40}}>{title}</ListItem>
             <ListItem divider sx={{height:220}}></ListItem>
-            <ListItem divider sx={{backgroundColor:'#7ccfde', bottom:'0px', height:40}}>
+            <ListItem divider sx={{backgroundColor:'#7ccfde', height:40}}>
             <Slider
                 aria-label="Temperature"
                 defaultValue={5}

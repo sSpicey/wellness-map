@@ -52,8 +52,10 @@ export default function DataGridDemo() {
       <DataGrid
         rows={rows}
         columns={columns}
-        pageSize={10}
-        rowsPerPageOptions={[10]}
+        pageSize={100}
+        autoHeight={true}
+        disableColumnFilter={true}
+        hideFooter={true}
         checkboxSelection
         disableSelectionOnClick
         experimentalFeatures={{ newEditingApi: true }}
