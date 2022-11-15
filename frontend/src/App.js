@@ -4,6 +4,8 @@ import { AppBar, Container, Grid, Toolbar, Paper, Typography, Button, IconButton
 import { useTheme } from '@mui/material/styles';
 import StyledPaper from "./components/StyledPaper";
 import StyledTable from "./components/StyledTable";
+import SearchIcon from '@mui/icons-material/Search';
+
 
 function App() {
   function isDataSent(){
@@ -12,7 +14,7 @@ function App() {
 
   const theme = useTheme();
   return (
-    <div className="App">
+    <div className="App" >
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 3 }}>
@@ -34,6 +36,9 @@ function App() {
         </Grid>
       </Grid>
 
+      <Button variant="contained" endIcon={<SearchIcon />} sx={{marginTop:'20px'}}>
+        Procurar
+      </Button>
       {isDataSent() ? <StyledTable />: <h2>Naris</h2>}
      
     </div>
