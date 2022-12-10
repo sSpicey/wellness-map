@@ -1,3 +1,42 @@
 from django.db import models
 
-# Create your models here.
+class WellBeingProvider(models.Model):
+    id = models.CharField(primary_key=True, max_length=6)
+    cd_equi = models.IntegerField()
+    tema = models.CharField(max_length=40)
+    id_equip = models.IntegerField()
+    equipament = models.CharField(max_length=200)
+    tipo_equi = models.CharField(max_length=200)
+    dep_admin = models.CharField(max_length=200)
+    pre_nome = models.CharField(max_length=200)
+    nome = models.CharField(max_length=200)
+    sigla_equi = models.CharField(max_length=200)
+    conveniado = models.CharField(max_length=200)
+    nome_abrev = models.CharField(max_length=200)
+    nome_mapa = models.CharField(max_length=200)
+    cd_rua = models.CharField(max_length=200)
+    nome_rua = models.CharField(max_length=200)
+    nome_ruano = models.CharField(max_length=200)
+    num_pred = models.IntegerField()
+    compl_end = models.CharField(max_length=200)
+    indfiscal = models.CharField(max_length=200)
+    cd_bairro = models.IntegerField()
+    bairro = models.CharField(max_length=200)
+    quadr_equi = models.CharField(max_length=200)
+    cd_regional = models.CharField(max_length=200)
+    regional = models.CharField(max_length=200)
+    func_manha = models.CharField(max_length=200)
+    func_tarde = models.CharField(max_length=200)
+    func_noite = models.CharField(max_length=200)
+    func_24hr = models.CharField(max_length=200)
+    telefone = models.CharField(max_length=200)
+    ramal = models.CharField(max_length=200)
+    email = models.CharField(max_length=200)
+    site = models.CharField(max_length=200)
+    dt_inaugur = models.CharField(max_length=200)
+    desativado = models.BooleanField()
+    observacao = models.CharField(max_length=200)
+    fonte = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.nome_mapa
