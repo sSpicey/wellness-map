@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from base.views import UploadFileView
+from base.views import UploadFileView, getProviders
 
 from rest_framework import routers
 
@@ -23,6 +23,6 @@ from rest_framework import routers
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('upload/', UploadFileView.as_view(), name='upload-file')
-   # path('api-auth/', include('rest_framework.urls'))
+    path('upload/', UploadFileView.as_view(), name='upload-file'),
+    path('api/providers', getProviders, name='providers'),
 ]

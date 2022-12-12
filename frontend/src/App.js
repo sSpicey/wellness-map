@@ -18,7 +18,7 @@ function App() {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 3 }}>
-            Wellness Map
+            Perfil Estratégico de Exemplo para o Projeto de Bem Estar
           </Typography>
         </Toolbar>
       </AppBar>
@@ -28,7 +28,7 @@ function App() {
             <StyledPaper title='Segurança'></StyledPaper>
           </Grid>
           <Grid item>
-            <StyledPaper title='Esporte e Lazer'></StyledPaper>
+            <StyledPaper title='Cultura'></StyledPaper>
           </Grid>
           <Grid item>
             <StyledPaper title='Educação'></StyledPaper>

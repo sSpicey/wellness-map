@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from rest_framework import generics
-import io, csv, pandas as pd
+import io, json, csv, pandas as pd
+
 from rest_framework.response import Response
+from rest_framework.decorators import api_view
 from .models import WellBeingProvider
 from .serializers import *
 
@@ -54,3 +56,15 @@ class UploadFileView(generics.CreateAPIView):
                        )
             new_file.save()
         return Response({"status": "success"})
+
+@api_view(['GET'])
+def getProviders(request):
+    query = request.query_params.get('keyword')
+    if query == None:
+        query = ''
+
+    providers = WellBeingProvider.objects.all()
+
+    serializer = ProviderSerializer(providers, many=True)
+    
+    return Response(serializer.data)
