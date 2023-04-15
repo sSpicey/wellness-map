@@ -1,5 +1,5 @@
 import React from 'react'
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 
 import imgSaude from '../img/saude.png';
 import imgSeguranca from '../img/seguranca.png';
@@ -35,13 +35,14 @@ function Body() {
   var cultureWeigth = 5;
   var healthWeigth = 5;
   var isDataSent = true;
-  const providers = [];
+  var providers = [];
   
-  function setProviders(data){
+  const setProviders = useCallback((data) => {
+
     data.forEach(object => {
       providers.push(object);
     });
-  }
+  }, [providers]);
 
   function buttonHandler(){
     let bairros = [];
@@ -91,7 +92,7 @@ function Body() {
       rows.push(JSON.parse(JSON.stringify(obj)));
     });
 
-    setStatefulRows(statefulRows.concat(rows));
+    setStatefulRows(rows);
     setDataSent();
   }
 
@@ -113,7 +114,7 @@ function Body() {
 
   useEffect(() => {
     axios.get('http://127.0.0.1:8000/api/providers').then(response =>  setProviders(response.data));
-  }, []);
+  }, [setProviders]);
 
   return (
     <div>
@@ -203,7 +204,7 @@ function Body() {
         disableSelectionOnClick
         experimentalFeatures={{ newEditingApi: true }}
       />
-    </Box> : <h2></h2>};
+    </Box> : ''};
     </div>
   )
 }
