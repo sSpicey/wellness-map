@@ -107,10 +107,6 @@ function Body() {
     cultureWeigth = value.target.value;
   }
 
-  function refreshPage() {
-    window.location.reload(false);
-  }
-
   function setDataSent(){
     isDataSent = true;
   }
