@@ -11,6 +11,8 @@ import { Grid, Paper, Button, ListItem, Slider, Box } from '@mui/material'
 import { DataGrid } from '@mui/x-data-grid';
 import SearchIcon from '@mui/icons-material/Search';
 
+import { useFormData } from '../FormDataContext';
+
 const columns = [
   { field: 'id', headerName: 'ID', width: 90 },
   {
@@ -30,6 +32,7 @@ const columns = [
 
 function Body() {
   const [statefulRows, setStatefulRows] = useState([]);
+  const { formData } = useFormData();
 
   var securityWeigth = 5;
   var cultureWeigth = 5;
@@ -192,6 +195,16 @@ function Body() {
       <Button variant="contained" endIcon={<SearchIcon />} sx={{marginTop:'20px'}} onClick={buttonHandler}>
         Procurar
       </Button>
+
+      <h2>Main Page</h2>
+      {formData ? (
+        <div>
+          <h3>Form Data:</h3>
+          <pre>{JSON.stringify(formData, null, 2)}</pre>
+        </div>
+      ) : (
+        <p>No form data available.</p>
+      )}
 
       {isDataSent ? <Box sx={{ height: 400, margin:'20px' }}>
       <DataGrid
