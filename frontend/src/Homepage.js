@@ -47,11 +47,12 @@ function Homepage() {
       // justifyContent: 'center',
       // alignItems: 'center'
     }}>
-        <Header onAboutClick={handleAboutWindowClick} onHelpClick={handleHelpWindowClick} showAbout={showAboutWindow} showHelp={showHelpWindow} />
-        {/* <h1>Welcome to the Homepage!</h1> */}
-        {/* <button onClick={handleMainClick}>Go to Main Page</button>
-        <br />
-        <button onClick={handleFormClick}>Go to Form Page</button> */}
+        <Header 
+          onAboutClick={handleAboutWindowClick} 
+          onHelpClick={handleHelpWindowClick} 
+          onHamburgerClick={handleRightSideWindowClick}
+          showAbout={showAboutWindow} 
+          showHelp={showHelpWindow} />
 
         <button 
           onClick={handleRightSideWindowClick} 
