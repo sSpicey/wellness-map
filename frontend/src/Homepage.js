@@ -53,27 +53,6 @@ function Homepage() {
           onHamburgerClick={handleRightSideWindowClick}
           showAbout={showAboutWindow} 
           showHelp={showHelpWindow} />
-
-        <button 
-          onClick={handleRightSideWindowClick} 
-          style={{
-            position: 'absolute', // Position it absolute...
-            bottom: '80px', // ...at the bottom right corner
-            right: '120px',
-            borderRadius: '96px',
-            paddingTop: '1px',
-            paddingBottom: '1px',
-            paddingRight: '16px',
-            paddingLeft: '16px',
-            border: '0px',
-            backgroundColor: '#00534A',
-          }}
-        >
-          <p style={{color: 'white', }}>busca personalizada</p>
-        </button>
-        
-
-        {/* Conditional rendering of the right side window */}
         {showRightSideWindow && <RightSideWindow closeWindow={handleRightSideWindowClick}/>}
     </div>
   );
