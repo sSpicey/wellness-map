@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import './fonts/Roboto-Regular.ttf';
+import './fonts/Roboto-Bold.ttf';
 
 const theme = createTheme({
   palette: {
@@ -18,11 +20,11 @@ const theme = createTheme({
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <React.Suspense>
     <ThemeProvider theme={theme}>
       <App /> 
     </ThemeProvider>
-  </React.StrictMode>
+  </React.Suspense>
 );
 
 // If you want to start measuring performance in your app, pass a function

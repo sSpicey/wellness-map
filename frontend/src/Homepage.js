@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from "./components/Header";
 import RightSideWindow from "./components/RightSideWindow";
+import AboutWindow from "./components/AboutWindow";
+import HelpWindow from "./components/HelpWindow";
 
 import imgMap from "./img/map-google.png"
 
@@ -10,6 +12,9 @@ function Homepage() {
   const navigate = useNavigate();
 
   const [showRightSideWindow, setShowRightSideWindow] = useState(false);
+
+  const [showAboutWindow, setShowAboutWindow] = useState(false);
+  const [showHelpWindow, setShowHelpWindow] = useState(false);
 
   const handleMainClick = () => {
     navigate('/main');
@@ -23,9 +28,17 @@ function Homepage() {
     setShowRightSideWindow(!showRightSideWindow);
   };
 
+  const handleAboutWindowClick = () => {
+    setShowAboutWindow(!showAboutWindow);
+  };
+
+  const handleHelpWindowClick = () => {
+    setShowHelpWindow(!showHelpWindow);
+  };
+
   return (
     <div style={{
-      backgroundImage: `url(${imgMap})`,
+      // backgroundImage: `url(${imgMap})`,
       backgroundPosition: 'center',
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
@@ -34,28 +47,11 @@ function Homepage() {
       // justifyContent: 'center',
       // alignItems: 'center'
     }}>
-        <Header />
+        <Header onAboutClick={handleAboutWindowClick} onHelpClick={handleHelpWindowClick} showAbout={showAboutWindow} showHelp={showHelpWindow} />
         {/* <h1>Welcome to the Homepage!</h1> */}
-        <div 
-          style={{ 
-            borderRadius: '96px',
-            backgroundColor: '#B3D7D5',
-            marginLeft: '140px',
-            marginRight: '140px',
-            marginTop: '30px',
-            marginBottom: '30px',
-            display: 'flex',
-            justifyContent: 'space-evenly',
-          }} >
-              <p>saúde</p>
-              <p>educação</p>
-              <p>cultura</p>
-              <p>transporte público</p>
-              <p>área verde</p>
-        </div>
-        <button onClick={handleMainClick}>Go to Main Page</button>
+        {/* <button onClick={handleMainClick}>Go to Main Page</button>
         <br />
-        <button onClick={handleFormClick}>Go to Form Page</button>
+        <button onClick={handleFormClick}>Go to Form Page</button> */}
 
         <button 
           onClick={handleRightSideWindowClick} 

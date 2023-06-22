@@ -1,29 +1,40 @@
 import React from 'react'
-import { AppBar, Toolbar, Input} from '@mui/material'
+import { AppBar, Toolbar, Button} from '@mui/material'
 import imgLogo from "../img/logo-figma1.png"
+import AboutWindow from "./AboutWindow";
+import HelpWindow from "./HelpWindow";
 
-function Header() {
+function Header({onAboutClick, onHelpClick, showAbout, showHelp}) {
   return (
     <div>
-        <AppBar position="static" sx={{ backgroundColor: '#00534A', height: '50px' }}>
+        <AppBar position="static" sx={{ backgroundColor: '#EAEDDC', height: '70px' }}>
         <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
-          <img src={imgLogo} alt="Logo" style={{margin: '5px',height: '28px', objectFit:'contain', marginBottom: '15px', marginLeft: '100px'}}/>
-          <Input 
-            placeholder="Search..." 
-            sx={{ 
-                borderRadius: '96px',
-                fontSize: '0.7rem',
-                lineHeight: '0.5rem',
-                padding: '5px 12px',
-                backgroundColor: '#EAEDDC',
-                bottom: '5px',
-                marginRight: '100px',
-                width: '320px',
-                height: '28px'
-            }} 
-          />
+          <img src={imgLogo} alt="Logo" style={{margin: '5px',height: '60px', objectFit:'contain', marginBottom: '5px', marginLeft: '40px'}}/>
+          <div style={{justifyContent: 'space-evenly', display: 'flex', marginRight: '40px'}}>
+            <button 
+            onClick={onAboutClick} 
+            variant="contained" 
+            style={{
+              backgroundColor: '#EAEDDC',
+              borderWidth: 0,
+              fontFamily: 'RobotoBold',
+              fontSize: 20,
+              marginRight: '40px'
+              }}>sobre</button>
+            <button 
+            onClick={onHelpClick} 
+            variant="contained" 
+            style={{
+              backgroundColor: '#EAEDDC',
+              borderWidth: 0,
+              fontFamily: 'RobotoBold',
+              fontSize: 20,
+              }}>ajuda</button>
+          </div>
         </Toolbar>
       </AppBar>
+      {showAbout && <AboutWindow closeWindow={onAboutClick}/>}
+      {showHelp && <HelpWindow closeWindow={onHelpClick}/>}
     </div>
   )
 }
