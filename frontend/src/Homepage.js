@@ -11,7 +11,7 @@ import imgMap from "./img/map-google.png"
 function Homepage() {
   const navigate = useNavigate();
 
-  const [showRightSideWindow, setShowRightSideWindow] = useState(false);
+  const [showRightSideWindow, setShowRightSideWindow] = useState(true);
 
   const [showAboutWindow, setShowAboutWindow] = useState(false);
   const [showHelpWindow, setShowHelpWindow] = useState(false);
