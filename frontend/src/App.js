@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Body from "./components/Body";
 import Homepage from './Homepage';
 import FormPage from './FormPage';
+import SearchPage from './SearchPage';
 import { FormDataProvider } from './FormDataContext';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
                   </>
                 }
               />
+              <Route path='/search' element={<SearchPage/>}/>
             </Routes>
           </FormDataProvider>
         </Router>

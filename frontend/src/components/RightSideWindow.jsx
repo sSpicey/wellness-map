@@ -10,7 +10,7 @@ const initialBlocks = [
   { id: '5', content: 'área verde' },
 ];
 
-function RightSideWindow({ closeWindow }) {
+function RightSideWindow({ closeWindow, handleSearch }) {
   const [blocks, setBlocks] = useState(initialBlocks);
 
   function onDragEnd(result) {
@@ -119,7 +119,7 @@ function RightSideWindow({ closeWindow }) {
         <option value="3">R$3000,00 - R$4000,00</option>
       </select>
       <button 
-        onClick={closeWindow} 
+        onClick={handleSearch} 
         style={{ 
           margin: '2px',
           alignSelf: 'center',

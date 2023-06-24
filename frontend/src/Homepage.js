@@ -2,11 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from "./components/Header";
 import RightSideWindow from "./components/RightSideWindow";
-import AboutWindow from "./components/AboutWindow";
-import HelpWindow from "./components/HelpWindow";
-
-import imgMap from "./img/map-google.png"
-
 
 function Homepage() {
   const navigate = useNavigate();
@@ -23,6 +18,10 @@ function Homepage() {
   const handleFormClick = () => {
     navigate('/form');
   };
+
+  const handleSearch = () => {
+    navigate('/search');
+  }
 
   const handleRightSideWindowClick = () => {
     setShowRightSideWindow(!showRightSideWindow);
@@ -53,7 +52,7 @@ function Homepage() {
           onHamburgerClick={handleRightSideWindowClick}
           showAbout={showAboutWindow} 
           showHelp={showHelpWindow} />
-        {showRightSideWindow && <RightSideWindow closeWindow={handleRightSideWindowClick}/>}
+        {showRightSideWindow && <RightSideWindow closeWindow={handleRightSideWindowClick} handleSearch={handleSearch}/>}
     </div>
   );
 }
