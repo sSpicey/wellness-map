@@ -1,26 +1,17 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useContext } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Map from './components/Map';
 
 function SearchPage() {
   const navigate = useNavigate();
+  const location = useLocation();
+
+
 
   const [showRightSideWindow, setShowRightSideWindow] = useState(true);
   const [showAboutWindow, setShowAboutWindow] = useState(false);
   const [showHelpWindow, setShowHelpWindow] = useState(false);
-
-  const handleMainClick = () => {
-    navigate('/main');
-  };
-
-  const handleFormClick = () => {
-    navigate('/form');
-  };
-
-  const handleSearch = () => {
-    navigate('/search');
-  };
 
   const handleRightSideWindowClick = () => {
     setShowRightSideWindow(!showRightSideWindow);
