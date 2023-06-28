@@ -1,5 +1,8 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { GoogleMap, useJsApiLoader, Marker, InfoWindow } from '@react-google-maps/api';
+import { useLocation } from 'react-router-dom'
+
+
 
 const containerStyle = {
   width: '50%',
@@ -59,15 +62,18 @@ const neighborhoods = [
 function Map() {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: '',
+    googleMapsApiKey: 'AIzaSyCVz5aasRb1Sn1l3RBr10E9XKPt08eW6Ec',
   });
 
   const [map, setMap] = React.useState(null);
+  const location = useLocation();
+  const {blocks, squareFtValue} = location.state;
   const [selectedMarker, setSelectedMarker] = React.useState(null);
 
   const onLoad = React.useCallback(function callback(map) {
     setMap(map);
-  }, []);
+    console.log(blocks, squareFtValue)
+  },);
 
   const onUnmount = React.useCallback(function callback() {
     setMap(null);
