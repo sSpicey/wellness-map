@@ -19,10 +19,6 @@ function Homepage() {
     navigate('/form');
   };
 
-  const handleSearch = () => {
-    navigate('/search');
-  }
-
   const handleRightSideWindowClick = () => {
     setShowRightSideWindow(!showRightSideWindow);
   };
@@ -52,7 +48,7 @@ function Homepage() {
           onHamburgerClick={handleRightSideWindowClick}
           showAbout={showAboutWindow} 
           showHelp={showHelpWindow} />
-        {showRightSideWindow && <RightSideWindow closeWindow={handleRightSideWindowClick} handleSearch={handleSearch}/>}
+        {showRightSideWindow && <RightSideWindow closeWindow={handleRightSideWindowClick}/>}
     </div>
   );
 }

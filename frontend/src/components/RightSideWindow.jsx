@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 
@@ -10,8 +11,13 @@ const initialBlocks = [
   { id: '5', content: 'área verde' },
 ];
 
-function RightSideWindow({ closeWindow, handleSearch }) {
+function RightSideWindow({ closeWindow }) {
+  const navigate = useNavigate();
   const [blocks, setBlocks] = useState(initialBlocks);
+
+  const handleSearch = () => {
+    navigate('/search');
+  }
 
   function onDragEnd(result) {
     if (!result.destination) return;
