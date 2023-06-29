@@ -61,7 +61,7 @@ const neighborhoods = [
 function Map() {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: 'AIzaSyCsGR7inEWgkE-eqY0EvJnMIEoE4UJcDuI',
+    googleMapsApiKey: '',
   });
 
   const [map, setMap] = React.useState(null);
